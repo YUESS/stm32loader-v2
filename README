@@ -1,0 +1,44 @@
+STM32Loader-v2
+===========
+
+Python script which will talk to the STM32 bootloader to upload and download firmware.
+
+Original Version by: Ivan A-R <ivan@tuxotronic.org>
+
+
+This will pre-erase flash, write somefile.bin to the flash on the device, and then perform a verification after writing is finished.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+以上为原版说明，
+STM32Loader-v2
+1.修改成使用python3.4版本
+2.修改有些烧录不成功的问题
+mail: tsen_y@163.com
+
+usage: stm32loader-v2.py [-hqVewvr] [-l length] [-p port] [-b baud] [-a addr] [-g addr] [file.bin]
+
+load stm32fxx's firmware by uart
+
+positional arguments:
+  file        [open file]
+
+  optional arguments:
+	-h, --help  show this help message and exit
+	-q          Quiet [default:off]
+	-V          Verbose [default:off]
+	-e          Erase [default:off]
+	-w          Write [default:off]
+	-v          Verify [default:off]
+	-r          Read [default:off]
+	-l length   Length of read
+	-p port     Serial port [default:/dev/ttyS0]
+	-b baud     Baud speed [default:115200]
+	-a addr     Target address
+	-g addr     Address to start running at [0x08000000, usually]
+
+python3.4 stm32loader-v2.py -ewv example/main.bin
+
+
+
+
